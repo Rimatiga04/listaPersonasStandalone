@@ -1,0 +1,42 @@
+<div class="container">
+  <br>
+  <div class="container">
+    <a class="btn btn-primary" routerLink="/personas-add/-1" role="button">Añadir Persona (a)</a>
+    <span> | </span>
+    <button type="button" class="btn btn-primary" (click)="iraNuevaPersona()">Añadir Persona (p)</button>
+  </div>
+  <br>
+  <div class="container">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr class="table-success">
+          <th>ID</th>
+          <th>DNI</th>
+          <th>NOMBRE</th>
+          <th>APELLIDOS</th>
+          <th>ACCION</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(p of listaPer; track $index){
+        <tr>
+          <td>{{p.id}}</td>
+          <td>{{p.dni}}</td>
+          <td>{{p.nombre}}</td>
+          <td>{{p.apellidos}}</td>
+          <td>
+            <button class="btn btn-link" routerLink="/personas-add/{{p.id}}">Editar</button>
+            <button class="btn btn-link" (click)="borre(p.id,p.nombre )">Borrar</button>
+          </td>
+        </tr>
+        }
+      </tbody>
+      <tfoot>Total de Personas: {{listaPer.length}}</tfoot>
+
+    </table>
+
+  </div>
+
+
+
+</div>
