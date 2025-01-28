@@ -44,7 +44,6 @@ export class FormPersonaComponent {
     }
     else {
       this.peticion.modificar(this.persona).subscribe(datos => {
-        // this.persona.id = -1;
         this.ruta.navigate(["/"]);
       })
     }
